@@ -18,5 +18,4 @@ connection.connect(error => {
     console.log('Connected to the database with thread ID: ' + connection.threadId);
 });
 
-// Export the connection to use in other files
 module.exports = connection;
