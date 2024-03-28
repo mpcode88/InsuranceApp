@@ -24,23 +24,22 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 function calculateQuote() {
-    // Retrieve user input
     const age = parseInt(document.getElementById('age').value);
     const homeAge = parseInt(document.getElementById('home-age').value);
     const carValue = parseInt(document.getElementById('car-value').value);
 
-    // Define the base premiums and factors (these would typically come from your database or a backend service)
+    // Base premiums and factors
     const homeBasePremium = 500;
     const autoBasePremium = 750;
     const homeAgeFactor = 1.5;
-    const driverAgeFactor = age >= 25 ? 1 : 2; // Simplified age factor: 1 if 25 or older, 2 otherwise
-    const carValueFactor = carValue / 1000; // Simplified factor: higher car value increases the premium
+    const driverAgeFactor = age >= 25 ? 1 : 2;
+    const carValueFactor = carValue / 1000;
 
     // Calculate premiums
-    const homePremium = homeBasePremium * homeAgeFactor * (homeAge / 10); // Example calculation
-    const autoPremium = (autoBasePremium + carValueFactor) * driverAgeFactor; // Example calculation
+    const homePremium = homeBasePremium * homeAgeFactor * (homeAge / 10);
+    const autoPremium = (autoBasePremium + carValueFactor) * driverAgeFactor;
 
-    // Display the results
+    // Display results
     const resultHtml = `
         <p>Your Home Insurance Quote: $${homePremium.toFixed(2)}</p>
         <p>Your Auto Insurance Quote: $${autoPremium.toFixed(2)}</p>
