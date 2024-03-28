@@ -1,5 +1,7 @@
+-- Create the DB
 create database InsuranceApp;
 
+-- Use the DB
 use database InsuranceApp;
 
 -- Create a table for storing user details
